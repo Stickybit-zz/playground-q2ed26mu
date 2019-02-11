@@ -148,4 +148,4 @@ L'état initial est "Jordan Belfort" mais après 1 seconde il est mis à jour av
 
 # Démonstration pratique
 
-@[Sample React App Boilerplate]({"stubs": ["src/app/app.jsx", "src/main.js"], "command": "./run.sh"})
+@[Exemple d'application React]({"stubs": ["src/app/app.jsx", "src/main.js"], "command": "./run.sh"})
