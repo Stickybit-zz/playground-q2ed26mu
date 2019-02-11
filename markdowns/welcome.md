@@ -4,7 +4,7 @@ Quand nous parlons des méthodes de cycle de vie dans React.js on fait référen
 
 # Méthode render()
 
-<b>render()</b> est la méthode la plus utilisée pour tout composant alimenté par React qui retourne un JSX avec des données back-end. la fonction <b>render()</b> est considérée comme une fonction normale mais en réalité elle doit toujours retourner quelque chose. Lorsque le fichier composant est appelé, il appelle par défaut la méthode <b>render()</b> parce que ce composant doit afficher le balisage HTML (qu'on peut qualifier de syntaxe JSX).
+<b>render()</b> est la méthode la plus utilisée pour tout composant alimenté par React qui retourne un JSX avec des données back-end. La fonction <b>render()</b> est considérée comme une fonction normale mais en réalité elle doit toujours retourner quelque chose. Lorsque le fichier composant est appelé, il appelle par défaut la méthode <b>render()</b> parce que ce composant doit afficher le balisage HTML (qu'on peut qualifier de syntaxe JSX).
 
 ```javascript
 import React, { Component } from 'react';
