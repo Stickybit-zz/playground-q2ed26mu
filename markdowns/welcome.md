@@ -37,7 +37,7 @@ class App extends Component {
 export default App;
 ```
 
-<b>Souvenez-vous, vous ne pouvez pas définir <b>setState()</b> dans la fonction <b>render()</b>. Alors pourquoi ?</b>
+<b>Souvenez-vous, vous ne pouvez pas définir <b>setState()</b> dans la fonction <b>render()</b>. Pourquoi ?</b>
 Parce que la fonction <b>setState()</b> change l'état de l'application et provoque une modification de l'état qui, par conséquent, déclenche l'appel de la fonction <b>render()</b>. Donc si vous écrivez quelque chose comme ceci, vous entrerez dans une boucle infinie et l'application crashera.
 
 Vous pouvez définir certaines variables, effectuer certaines opérations dans la fonction <b>render()</b>, mais n'utilisez jamais la fonction setState. D'une manière générale, souvent on affiche la valeur de certaines variables dans la méthode <b>render()</b>. C'est la fonction qui fait appel aux méthodes de montage du cycle de vie.
