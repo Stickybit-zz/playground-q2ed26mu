@@ -38,15 +38,15 @@ export default App;
 ```
 
 <b>Souvenez-vous, vous ne pouvez pas définir <b>setState()</b> dans la fonction <b>render()</b>. Pourquoi ?</b>
-Parce que la fonction <b>setState()</b> change l'état de l'application et provoque une modification de l'état qui, par conséquent, déclenche l'appel de la fonction <b>render()</b>. Donc si vous écrivez quelque chose comme ceci, vous entrerez dans une boucle infinie et l'application crashera.
+Parce que la fonction <b>setState()</b> change l'état de l'application qui, par conséquent, déclenche l'appel de la fonction <b>render()</b>. Donc si vous écrivez quelque chose comme ceci, vous entrerez dans une boucle infinie et l'application crashera.
 
 Vous pouvez définir certaines variables, effectuer certaines opérations dans la fonction <b>render()</b>, mais n'utilisez jamais la fonction setState. D'une manière générale, souvent on affiche la valeur de certaines variables dans la méthode <b>render()</b>. C'est la fonction qui fait appel aux méthodes de montage du cycle de vie.
 
 # La méthode componentDidMount()
 
-Comme son nom l'indique, cette méthode est appelée une fois que tous les éléments de la page sont rendus correctement. Une fois le balisage défini sur la page, cette technique est appelée par React lui-même pour soit récupérer les données depuis une API externe, soit effectuer des opérations uniques qui nécessitent des éléments <b>JSX</b>.
+Comme son nom l'indique, cette méthode est appelée une fois que tous les éléments de la page sont rendus correctement. Une fois le balisage défini sur la page. Cette méthode est appelée par React lui-même, soit pour récupérer les données depuis une API externe, soit pour effectuer des opérations uniques qui nécessitent des éléments <b>JSX</b>.
 
-La méthode <b>componentDidMount()</b> est l'endroit parfait pour appeler la méthode <b>setState()</b> afin de changer l'état de l'application tandis que <b>render()</b> se charge des données JSX à jour. Par exemple, si nous récupérons toutes les données d'une API, alors l'appel à l'API doit être placé dans cette méthode du cycle de vie. Une fois la réponse obtenue, nous pouvons appeler la méthode <b>setState()</b> et rendre l'élément avec les données mises à jour.
+La méthode <b>componentDidMount()</b> est l'endroit parfait pour appeler la méthode <b>setState()</b> afin de changer l'état de l'application tandis que <b>render()</b> se charge des données JSX mise à jour. Par exemple, si nous récupérons toutes les données d'une API, alors l'appel à l'API doit être placé dans cette méthode du cycle de vie. Une fois la réponse obtenue, nous pouvons appeler la méthode <b>setState()</b> et rendre l'élément avec les données mises à jour.
 
 ```javascript
 import React, { Component } from 'react';
