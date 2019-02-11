@@ -1,10 +1,10 @@
-# React Lifecycle Methods: render and componentDidMount
+# Méthodes du cycle de vie React : render et composantDidMount
 
-If we are talking about lifecycle methods in React.js then <b>render()</b> is the most used method. If React component has to display any data then it uses JSX. React uses JSX for templating instead of regular JavaScript.
+Si nous parlons de méthodes de cycle de vie dans React.js alors <b>render()</b> est la méthode la plus utilisée. Si le composant React doit afficher des données, il utilise JSX. React utilise JSX pour créer des modèles plutôt que du JavaScript classique.
 
-# render() method
+# Méthode render()
 
-As I have talked earlier, <b>render()</b> is the most used method for any React powered component which returns a JSX with backend data. It is seen as a normal function but <b>render()</b> function has to return something whether it is null.  When the component file is called it calls the <b>render()</b> method by default because that component needs to display the HTML markup or we can say JSX syntax.
+Comme je l'ai déjà dit, <b>render()</b> est la méthode la plus utilisée pour tout composant alimenté par React qui retourne un JSX avec des données back-end. Elle est considérée comme une fonction normale mais la fonction <b>render()</b> doit retourner quelque chose si elle est nulle.  Lorsque le fichier composant est appelé, il appelle par défaut la méthode <b>render()</b> car ce composant doit afficher le balisage HTML qu'on peut qualifier de syntaxe JSX.
 
 ```javascript
 import React, { Component } from 'react';
@@ -22,7 +22,7 @@ class App extends Component {
 
 export default App;
 ```
-Please take a note here; we must return something, if there is no <b>JSX</b> for the return then null would be perfect, but must return something. In that scenario, you can do something like this.
+Notez qu'il faut retourner quelque chose, s'il n'y a pas de <b>JSX</b> pour le retour alors null fera l'affaire. Quoi qu'il en soit il faut renvoyer quelque chose. Dans ce scénario, vous pouvez faire ça :
 
 ```javascript
 import { Component } from 'react';
@@ -37,16 +37,16 @@ class App extends Component {
 export default App;
 ```
 
-<b>Remember, you can not define <b>setState()</b> inside <b>render()</b> function. Why???</b>
-Because <b>setState()</b> function changes the state of the application and causing a change in the state called the <b>render()</b> function again. So if you write something like this then calling the function stack will go for infinity and application gets the crash.
+<b>Souvenez-vous, vous ne pouvez pas définir <b>setState()</b> dans la fonction <b>render()</b>. Alors pourquoi ?</b>
+Parce que la fonction <b>setState()</b> change l'état de l'application et provoque une modification de l'état qui, par conséquent, déclenche l'appel de la fonction <b>render()</b>. Donc si vous écrivez quelque chose comme ceci, vous entrerez dans une boucle infinie et l'application crashera.
 
-You can define some variables, perform some operation inside <b>render()</b> function, but never use the setState function. In general cases, We are logging out some variable’s output in the <b>render()</b> method. It is the function that calls in mounting lifecycle methods.
+Vous pouvez définir certaines variables, effectuer certaines opérations dans la fonction <b>render()</b>, mais n'utilisez jamais la fonction setState. D'une manière générale, souvent on affiche la valeur de certaines variables dans la méthode <b>render()</b>. C'est la fonction qui fait appel aux méthodes de montage du cycle de vie.
 
-# componentDidMount() method
+# La méthode componentDidMount()
 
-As the name suggests, after all the elements of the page is rendered correctly, this method is called. After the markup is set on the page, this technique called by React itself to either fetch the data from An External API or perform some unique operations which need the <b>JSX</b> elements.
+Comme son nom l'indique, cette méthode est appelée une fois que tous les éléments de la page sont rendus correctement. Une fois le balisage défini sur la page, cette technique est appelée par React lui-même pour soit récupérer les données depuis une API externe, soit effectuer des opérations uniques qui nécessitent des éléments <b>JSX</b>.
 
-<b>componentDidMount()</b> method is the perfect place, where we can call the <b>setState()</b> method to change the state of our application and <b>render()</b> the updated data loaded JSX. For example, we are going to fetch any data from an API then API call should be placed in this lifecycle method, and then we get the response, we can call the <b>setState()</b> method and render the element with updated data.
+La méthode <b>componentDidMount()</b> est l'endroit parfait pour appeler la méthode <b>setState()</b> afin de changer l'état de l'application tandis que <b>render()</b> se charge des données JSX à jour. Par exemple, si nous récupérons toutes les données d'une API, alors l'appel à l'API doit être placé dans cette méthode du cycle de vie. Une fois la réponse obtenue, nous pouvons appeler la méthode <b>setState()</b> et rendre l'élément avec les données mises à jour.
 
 ```javascript
 import React, { Component } from 'react';
@@ -85,11 +85,11 @@ class App extends Component {
 export default App;
 ```
 
-If you see an above example, then I have simulated an API call with setTimeOut function and fetch the data. So, after the component is rendered correctly, <b>componentDidMount()</b> function is called and that call <b>getData()</b> function.
+Dans l'exemple ci-dessous j'ai simulé un appel à une API via la fonction setTimeOut puis je récupère les données. Une fois le composant rendu correctement, la fonction <b>componentDidMount()</b> est appelée qui enchaine l'appel à la fonction <b>getData()</b>.
 
-# componentWillMount() method
+# La méthode componentWillMount()
 
-<b>componentWillMount()</b> method is the least used lifecycle method and called before any HTML element is rendered. If you want to see then check out the example mentioned above, we just need to add one more method.
+La méthode <b>componentWillMount()</b> est la méthode de cycle de vie la moins utilisée, elle est appelée avant que tout élément HTML soit rendu. Si vous voulez voir un aperçu, jetez un coup d'oeil à l'exemple précédent, il suffit d'ajouter une méthode de plus :
 
 ```javascript
 import React, { Component } from 'react';
@@ -131,21 +131,21 @@ class App extends Component {
 export default App;
 ```
 
-If you will see carefully in the console panel, then it first logs “First this called” and then our initial state is defined and then <b>render()</b> method is called then <b>componentDidMount()</b> method is called and then newly fetched data is displayed in the component.
+Si vous regardez attentivement la sortie console, il est d'abord affiché "First this called" et ensuite notre état initial est défini, puis la méthode <b>render()</b> est appelée, ensuite la méthode <b>componentDidMount()</b> est appelée pour qu'enfin les données nouvellement récupérées soient affichées dans le composant.
 
-## Order of the methods till now.
+## L’ordre d’appel des méthodes
 
 1. componentWillMount()
-2. set the initial state in the constructor
+2. définir l'état initial dans le constructeur
 3. render()
 4. componentDidMount()
 5. setState()
 6. render()
 
-Following example is the use case of <b>componentDidMount()</b>. In above order, excecutions are done. After 1 second, the state will change and updated state will display.
+L'exemple suivant est un cas d'utilisation de <b>componentDidMount()</b>. Les exécutions sont effectuées dans l'ordre ci-dessus. Au bout d'une seconde, l'état change et la mise à jour s'affiche.
 
-Initial state is "Jordan Belfort" but after 1 second it will change it to "Hello WallStreet".
+L'état initial est "Jordan Belfort" mais après 1 seconde il est mis à jour avec "Hello WallStreet".
 
-# Hands-on Demo
+# Démonstration pratique
 
 @[Sample React App Boilerplate]({"stubs": ["src/app/app.jsx", "src/main.js"], "command": "./run.sh"})
