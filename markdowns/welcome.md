@@ -1,4 +1,4 @@
-# Méthodes du cycle de vie React : render et composantDidMount
+# Méthodes du cycle de vie React : render et ComponentDidMount
 
 Quand nous parlons des méthodes de cycle de vie dans React.js on fait référence à la méthode <b>render()</b> la plupart du temps. JSX est utilisé quand un composant React doit afficher des données. React utilise JSX pour créer des modèles plutôt que du JavaScript classique.
 
