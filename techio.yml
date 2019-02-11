@@ -1,4 +1,4 @@
-title: 'Cycle de vie React : render et ComponentDidMount'
+title: 'Cycle de vie d''un composant React : render et ComponentDidMount'
 plan:
 - title: Welcome
   statement: markdowns/welcome.md
