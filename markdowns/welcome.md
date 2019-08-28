@@ -9,7 +9,6 @@ Quand nous parlons des méthodes de cycle de vie dans React.js on fait référen
 ```javascript
 import React, { Component } from 'react';
 
-
 class App extends Component {
   render() {
     return (
@@ -26,7 +25,6 @@ Notez qu'il faut retourner quelque chose, s'il n'y a pas de <b>JSX</b> pour le r
 
 ```javascript
 import { Component } from 'react';
-
 
 class App extends Component {
   render() {
